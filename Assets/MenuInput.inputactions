@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "MenuInput",
+    "maps": [
+        {
+            "name": "Menu",
+            "id": "7bf07d9a-3867-4fd8-b7b9-8a796d60f3c9",
+            "actions": [
+                {
+                    "name": "NextSlide",
+                    "type": "Button",
+                    "id": "1feb7fe3-b745-4376-8fec-0fafa2fe4ccd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "24844eb6-7227-427d-affc-4d1849e42306",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextSlide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

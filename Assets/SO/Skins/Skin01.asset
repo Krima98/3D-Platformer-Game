@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8cbc35d6c97e549bb53662c84257d6, type: 3}
+  m_Name: Skin01
+  m_EditorClassIdentifier: Assembly-CSharp::SkinDataSO
+  skinID: 1
+  skinName: PURPLE
+  rewardSkin: {fileID: 21300000, guid: 7b124ff5b7c1f6f4e8c53c2a6e5e1795, type: 3}
+  rewardOwned: {fileID: 21300000, guid: db6f9ccf2f8fa79439b30654dc5c662f, type: 3}
+  materialHead: {fileID: 2100000, guid: 79329382536236c41ac1de5fa6320eca, type: 2}
+  materialBody: {fileID: 2100000, guid: 0d1b4ae69e9f49249962816971e00e0e, type: 2}
