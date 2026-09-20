@@ -18,5 +18,5 @@ You can download the game directly without Unity installed.
 2. Download the latest `.zip` file.
 3. Extract and run the game.
 
-*Notes: There will be no music and missing sounds due to copyright restrictions outside.*
+*Notes: There will be no music and missing sounds due to copyright restrictions.*
 
