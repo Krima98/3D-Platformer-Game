@@ -261,60 +261,6 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-void OnDrawGizmosSelected()
-{
-    // Henter baseradius fra CharacterController (eller bruker 0.5f som nød-løsning i editoren)
-    float baseRadius = characterController != null ? characterController.radius : 0.5f;
-
-
-    // ==========================================
-    // 1. VEGG-SJEKK (WallHandler)
-    // ==========================================
-    Vector3 wallStart = transform.position + Vector3.up * startRayHightWall;
-    float wallRadius = baseRadius * 0.8f;
-
-    // Grønn hvis du sklir på vegg, rød hvis ikke
-    Gizmos.color = touchingSlideableWall ? Color.green : Color.red;
-    Gizmos.DrawRay(wallStart, transform.forward * wallRayLenght);
-    Gizmos.DrawWireSphere(wallStart + transform.forward * wallRayLenght, wallRadius);
-
-
-    // ==========================================
-    // 2. BAKKE-SJEKK (GroundHandler)
-    // ==========================================
-    Vector3 groundStart = transform.position + Vector3.up * originStart;
-    float groundRadius = baseRadius * radiusMulti;
-
-    // Grønn hvis du står på bakken, rød hvis du er i lufta
-    Gizmos.color = onGround ? Color.green : Color.red;
-    Gizmos.DrawRay(groundStart, Vector3.down * groundRaySphereLength);
-    Gizmos.DrawWireSphere(groundStart + Vector3.down * groundRaySphereLength, groundRadius);
-
-
-    // ==========================================
-    // 3. BAKKE-VINKEL / SLOPE (CalculateSlopeLogic)
-    // ==========================================
-    Vector3 slopeStart = transform.position + Vector3.up * originStart;
-    bool slopeHit = Physics.Raycast(slopeStart, Vector3.down, out RaycastHit rayHit, rayDistance, ignorePlayer, QueryTriggerInteraction.Ignore);
-
-    if (slopeHit)
-    {
-        // Gul hvis bakken er trygg, lilla (magenta) hvis den er for bratt (steepSlope)
-        float currentGroundAngle = Vector3.Angle(Vector3.up, rayHit.normal);
-        Gizmos.color = (currentGroundAngle <= walkableSlopeAngle) ? Color.yellow : Color.magenta;
-
-        // Tegner selve strålen og en liten "pinne" som viser vinkelen på bakken (normalen)
-        Gizmos.DrawLine(slopeStart, rayHit.point);
-        Gizmos.DrawRay(rayHit.point, rayHit.normal * 0.4f);
-    }
-    else
-    {
-        // Hvit linje hvis den overhode ikke når ned til bakken
-        Gizmos.color = Color.white;
-        Gizmos.DrawRay(slopeStart, Vector3.down * rayDistance);
-    }
-}
-
     // ==== MOVEMENT =====
     void HandleMovement()
     {
